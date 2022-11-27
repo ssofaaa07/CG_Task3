@@ -1,4 +1,6 @@
-package butovetskaya;
+package butovetskaya.draw;
+
+import butovetskaya.Point;
 
 import java.awt.*;
 import java.util.List;
@@ -9,7 +11,7 @@ public class DrawPoints {
     private final int centerX;
     private final int centerY;
     private final int step;
-    private final List<Point> listPoints;
+    private final List<butovetskaya.Point> listPoints;
 
     public DrawPoints(Graphics2D g2, int centerX, int centerY, int step, List<Point> listPoints) {
         this.g2 = g2;

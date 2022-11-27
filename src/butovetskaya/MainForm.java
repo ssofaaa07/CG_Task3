@@ -6,6 +6,9 @@ import java.awt.*;
 //import java.beans.Expression;
 import java.util.ArrayList;
 import java.util.List;
+
+import butovetskaya.draw.DrawCurve;
+import butovetskaya.draw.DrawFunc;
 import net.objecthunter.exp4j.*;
 public class MainForm extends JFrame {
     private JTextField textFieldFunc;

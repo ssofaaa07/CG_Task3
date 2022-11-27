@@ -1,9 +1,10 @@
-package butovetskaya;
+package butovetskaya.draw;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import butovetskaya.Point;
 import butovetskaya.method.BSpline;
 import butovetskaya.method.Bezier;
 
@@ -13,11 +14,11 @@ public class DrawCurve {
     private final int centerX;
     private final int centerY;
     private final int step;
-    private final List<Point> pointsCurve;
-    private final List<Point> changedPoints;
+    private final List<butovetskaya.Point> pointsCurve;
+    private final List<butovetskaya.Point> changedPoints;
     private final String method;
 
-    public DrawCurve(Graphics2D g2, int centerX, int centerY, int step, List<Point> pointsCurve, List<Point> changedPoints, String method) {
+    public DrawCurve(Graphics2D g2, int centerX, int centerY, int step, List<butovetskaya.Point> pointsCurve, List<butovetskaya.Point> changedPoints, String method) {
         this.g2 = g2;
         this.centerX = centerX;
         this.centerY = centerY;
@@ -28,7 +29,7 @@ public class DrawCurve {
     }
 
     public void paintCurve() {
-        List<Point> pointsToDrawCurve = new ArrayList<>();
+        List<butovetskaya.Point> pointsToDrawCurve = new ArrayList<>();
         changedPoints.clear();
         g2.setStroke(new BasicStroke(1));
         switch (method) {
@@ -53,9 +54,9 @@ public class DrawCurve {
         drawPoints(pointsCurve);
     }
 
-    private void drawPoints(List<Point> list) {
-        for (Point value : list) {
-            Point coordinates = new Point(0, 0);
+    private void drawPoints(List<butovetskaya.Point> list) {
+        for (butovetskaya.Point value : list) {
+            butovetskaya.Point coordinates = new Point(0, 0);
             coordinates.setX(value.getX() * step + centerX);
             coordinates.setY(centerY - value.getY() * step);
 

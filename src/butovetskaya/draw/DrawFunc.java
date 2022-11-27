@@ -1,7 +1,8 @@
-package butovetskaya;
+package butovetskaya.draw;
+
+import butovetskaya.Point;
 
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class DrawFunc {
@@ -10,7 +11,7 @@ public class DrawFunc {
     private final int centerX;
     private final int centerY;
     private final int step;
-    private final List<Point> pointsFunc;
+    private final List<butovetskaya.Point> pointsFunc;
 
     public DrawFunc(Graphics2D g2, int centerX, int centerY, int step, List<Point> pointsFunc) {
         this.g2 = g2;
