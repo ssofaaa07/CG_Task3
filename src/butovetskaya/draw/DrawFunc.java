@@ -23,6 +23,8 @@ public class DrawFunc {
 
     public void paintFunc() {
         g2.setColor(new Color(128, 0, 128));
+//        DrawCurve dc = new DrawCurve(g2, centerX, centerY, step, pointsFunc, "Безье");
+//        dc.paintCurve();
         DrawPoints dp = new DrawPoints(g2, centerX, centerY, step, pointsFunc);
         dp.connectingPoints();
     }

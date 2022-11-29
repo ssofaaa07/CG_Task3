@@ -15,16 +15,15 @@ public class DrawCurve {
     private final int centerY;
     private final int step;
     private final List<butovetskaya.Point> pointsCurve;
-    private final List<butovetskaya.Point> changedPoints;
+    private final List<butovetskaya.Point> changedPoints = new ArrayList<>();
     private final String method;
 
-    public DrawCurve(Graphics2D g2, int centerX, int centerY, int step, List<butovetskaya.Point> pointsCurve, List<butovetskaya.Point> changedPoints, String method) {
+    public DrawCurve(Graphics2D g2, int centerX, int centerY, int step, List<Point> pointsCurve, String method) {
         this.g2 = g2;
         this.centerX = centerX;
         this.centerY = centerY;
         this.step = step;
         this.pointsCurve = pointsCurve;
-        this.changedPoints = changedPoints;
         this.method = method;
     }
 
@@ -48,7 +47,7 @@ public class DrawCurve {
                 }
             }
         }
-        g2.setColor(new Color(60,60,60));
+        g2.setColor(new Color(60,200,60));
         DrawPoints dp = new DrawPoints(g2, centerX, centerY, step, pointsToDrawCurve);
         dp.connectingPoints();
         drawPoints(pointsCurve);
@@ -61,7 +60,7 @@ public class DrawCurve {
             coordinates.setY(centerY - value.getY() * step);
 
             g2.setColor(new Color(128,0,128));
-            g2.fillOval((int)Math.round(coordinates.getX()) - 2, (int)Math.round(coordinates.getY()) - 2, 5, 5);
+            g2.fillOval((int)Math.round(coordinates.getX()) - 2, (int)Math.round(coordinates.getY()) - 2, 4, 4);
             changedPoints.add(coordinates);
         }
     }

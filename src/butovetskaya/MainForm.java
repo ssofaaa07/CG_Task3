@@ -6,6 +6,7 @@ import java.awt.*;
 //import java.beans.Expression;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import butovetskaya.draw.DrawCurve;
 import butovetskaya.draw.DrawFunc;
@@ -25,6 +26,9 @@ public class MainForm extends JFrame {
     private JButton buttonClear;
     private JPanel panel;
     private JSpinner spinnerScale;
+    private JButton buttonDrawFuncWithMethod;
+    private JButton buttonRandom;
+    private JTextField textFieldStep;
 
     private int centerX;
     private int centerY;
@@ -32,6 +36,8 @@ public class MainForm extends JFrame {
     private List<Point> pointsFunc = new ArrayList<>();
     private List<Point> pointsCurve = new ArrayList<>();
     private List<Point> changedPoints = new ArrayList<>();
+
+    private boolean withMethod;
 
     DrawFunc drawFunc;
     DrawCurve drawCurve;
@@ -47,6 +53,7 @@ public class MainForm extends JFrame {
 //        DrawPanel drawPanel = new DrawPanel();
 
         textFieldFunc.setText("x^2");
+        textFieldStep.setText("1");
 
         buttonClear.addActionListener( k -> {
             pointsFunc.clear();
@@ -54,8 +61,33 @@ public class MainForm extends JFrame {
         });
 
         buttonDrawFunc.addActionListener(k -> {
+            withMethod = false;
             pointsFunc.clear();
-            for (double x = -centerX; x <= centerX; x += 0.001) {
+            for (double x = -centerX; x <= centerX; x += Double.parseDouble(textFieldStep.getText())) {
+                if (x == 0) x += 0.0000001;
+                if (findParameter()) {
+                    Expression e = new ExpressionBuilder(textFieldFunc.getText())
+                            .variables("x", "a")
+                            .build()
+                            .setVariable("x", x)
+                            .setVariable("a", Integer.parseInt(String.valueOf(spinnerValueA.getValue())));
+                    double y = e.evaluate();
+                    if (y >= -centerY && y <= centerY) pointsFunc.add(new Point(x, y));
+                } else {
+                    Expression e = new ExpressionBuilder(textFieldFunc.getText())
+                            .variables("x")
+                            .build()
+                            .setVariable("x", x);
+                    double y = e.evaluate();
+                    if (y >= -centerY && y <= centerY) pointsFunc.add(new Point(x, y));
+                }
+            }
+        });
+
+        buttonDrawFuncWithMethod.addActionListener(k -> {
+            withMethod = true;
+            pointsFunc.clear();
+            for (double x = -centerX; x <= centerX; x += Double.parseDouble(textFieldStep.getText())) {
                 if (x == 0) x += 0.0000001;
                 if (findParameter()) {
                     Expression e = new ExpressionBuilder(textFieldFunc.getText())
@@ -83,6 +115,18 @@ public class MainForm extends JFrame {
             step = 10 * Integer.parseInt(String.valueOf(spinnerScale.getValue()));
             pointsCurve.add((new Point(Float.parseFloat(String.valueOf(spinnerValueX.getValue())),
                     Math.round(Float.parseFloat(String.valueOf(spinnerValueY.getValue()))))));
+        });
+
+        buttonRandom.addActionListener(k -> {
+            pointsFunc.clear();
+            centerX = panelDraw.getWidth() / 2;
+            centerY = panelDraw.getHeight() / 2;
+            step = 10 * Integer.parseInt(String.valueOf(spinnerScale.getValue()));
+            Random r = new Random();
+            for (int i = 0; i < 4; i++) {
+                pointsCurve.add((new Point(r.nextInt(-panelDraw.getWidth()/(2 * step), panelDraw.getWidth()/(2 * step)),
+                        r.nextInt(-panelDraw.getHeight()/(2 * step),panelDraw.getHeight()/(2 * step)))));
+            }
         });
     }
 
@@ -115,11 +159,14 @@ public class MainForm extends JFrame {
             drawAxes(g2, centerX, centerY);
             g2.setStroke(new BasicStroke(1));
 
-            if (pointsFunc.size() > 0) {
+            if (pointsFunc.size() > 0 && !withMethod) {
                 drawFunc = new DrawFunc(g2, centerX, centerY, step, pointsFunc);
                 drawFunc.paintFunc();
+            } else if (pointsFunc.size() > 0) {
+                drawCurve = new DrawCurve(g2, centerX, centerY, step, pointsFunc, "Б-сплайн");
+                drawCurve.paintCurve();
             } else if (pointsCurve.size() > 0) {
-                drawCurve = new DrawCurve(g2, centerX, centerY, step, pointsCurve, changedPoints, String.valueOf(comboBoxMethod.getSelectedItem()));
+                drawCurve = new DrawCurve(g2, centerX, centerY, step, pointsCurve, String.valueOf(comboBoxMethod.getSelectedItem()));
                 drawCurve.paintCurve();
             }
             g2.setColor(Color.black);
