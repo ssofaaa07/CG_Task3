@@ -44,7 +44,7 @@ public class MainForm extends JFrame {
         this.pack();
         this.setSize(new Dimension(1200, 700));
         this.spinnerScale.setValue(1);
-        DrawPanel drawPanel = new DrawPanel();
+//        DrawPanel drawPanel = new DrawPanel();
 
         textFieldFunc.setText("x^2");
 

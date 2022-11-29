@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f2f60b3-1d72-4ed1-8efe-f371f448ee72" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/exp4j_0_4_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/net_objecthunter_exp4j.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/butovetskaya/DrawCurve.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/butovetskaya/DrawFunc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/butovetskaya/DrawPoints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/butovetskaya/MainForm.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/butovetskaya/MainForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/butovetskaya/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/butovetskaya/method/BSpline.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/butovetskaya/method/Bezier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/butovetskaya/method/BinomialCoefficient.java" afterDir="false" />
+    <list default="true" id="2f2f60b3-1d72-4ed1-8efe-f371f448ee72" name="Changes" comment="create draw classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/butovetskaya/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/butovetskaya/MainForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/butovetskaya/MainForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/butovetskaya/MainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/butovetskaya/MainForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/butovetskaya/draw/DrawPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/butovetskaya/draw/DrawPoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/butovetskaya/method/BSpline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/butovetskaya/method/BSpline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/butovetskaya/method/Bezier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/butovetskaya/method/Bezier.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,8 +83,58 @@
       <workItem from="1669404134534" duration="4110000" />
       <workItem from="1669462220554" duration="2137000" />
       <workItem from="1669548713725" duration="8330000" />
-      <workItem from="1669574529299" duration="4538000" />
+      <workItem from="1669574529299" duration="5460000" />
+      <workItem from="1669580333695" duration="464000" />
+      <workItem from="1669618663854" duration="334000" />
+      <workItem from="1669624258125" duration="379000" />
+      <workItem from="1669625424379" duration="217000" />
+      <workItem from="1669628080385" duration="240000" />
+      <workItem from="1669631430528" duration="795000" />
+      <workItem from="1669642260880" duration="398000" />
     </task>
+    <task id="LOCAL-00001" summary="create methods">
+      <created>1669579318512</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669579318512</updated>
+    </task>
+    <task id="LOCAL-00002" summary="create main GUI form">
+      <created>1669579377370</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669579377370</updated>
+    </task>
+    <task id="LOCAL-00003" summary="/">
+      <created>1669579391107</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669579391107</updated>
+    </task>
+    <task id="LOCAL-00004" summary="create class Point">
+      <created>1669579409783</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669579409783</updated>
+    </task>
+    <task id="LOCAL-00005" summary="create draw classes">
+      <created>1669579425158</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669579425158</updated>
+    </task>
+    <task id="LOCAL-00006" summary="create draw classes">
+      <created>1669579515705</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669579515705</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,5 +150,13 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="create methods" />
+    <MESSAGE value="create main GUI form" />
+    <MESSAGE value="/" />
+    <MESSAGE value="create class Point" />
+    <MESSAGE value="create draw classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="create draw classes" />
   </component>
 </project>

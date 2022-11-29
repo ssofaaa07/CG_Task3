@@ -29,7 +29,7 @@ public class DrawPoints {
     void connectingPoints() {
         g2.setStroke(new BasicStroke(3));
         for (int i = 0; i < listPoints.size() - 1; i++) {
-            plot((int) Math.round(centerX + listPoints.get(i).getX() * step), (int) Math.round(centerY - listPoints.get(i).getY() * step), 3);
+            plot((int) Math.round(centerX + listPoints.get(i).getX() * step), (int) Math.round(centerY - listPoints.get(i).getY() * step), 4);
         }
         g2.setColor(Color.black);
     }

@@ -7,19 +7,19 @@ import java.util.List;
 
 public class Bezier {
 
-    List<Point> pointList;
+    List<Point> points;
     List<Point> addPoints = new ArrayList<>();
 
-    public Bezier(List<Point> pointList) {
-        this.pointList = pointList;
+    public Bezier(List<Point> points) {
+        this.points = points;
     }
 
     public void calculation() {
-        if (pointList.size() > 2) {
+        if (points.size() > 2) {
             for (double t = 0; t <= 1; t += 0.01) {
-                Point coordBXAndBY = new Point(0, 0);
-                calc(coordBXAndBY, pointList, t);
-                addPoints.add(coordBXAndBY);
+                Point BXAndBY = new Point(0, 0);
+                calc(BXAndBY, points, t);
+                addPoints.add(BXAndBY);
             }
         }
     }
